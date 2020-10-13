@@ -1,0 +1,26 @@
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  profile: apigee-minimal
+  meshConfig:
+    enableAutoMtls: false
+    accessLogFile: "/dev/stdout"
+  components:
+    ingressGateways:
+    - name: istio-ingressgateway
+      enabled: true
+      k8s:
+        service:
+          type: NodePort
+          ports:
+          - name: https
+            port: 443
+            targetPort: 443
+  values:
+    gateways:
+      istio-ingressgateway:
+        runAsRoot: true
+
+  addonComponents:
+    prometheus:
+      enabled: false
