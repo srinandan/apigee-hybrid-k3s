@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+sudo su -
 
 snap install kubectl --classic
 export PATH=/snap/core18/1885/usr/bin:$PATH
