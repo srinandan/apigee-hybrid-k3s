@@ -20,9 +20,10 @@ export PATH=/snap/core18/1885/usr/bin:$PATH
 
 cd ~
 
+export ISTIO_VERSION=1.7.3
 curl -L https://istio.io/downloadIstio | sh -
 
-cp istio-1.7.3/bin/istioctl /usr/local/bin
+cp istio-$ISTIO_VERSION/bin/istioctl /usr/local/bin
 
 export VERSION=1.3.3
 curl -LO https://storage.googleapis.com/apigee-public/apigee-hybrid-setup/$VERSION/apigeectl_linux_64.tar.gz && gunzip apigeectl_linux_64.tar.gz && tar -xvf apigeectl_linux_64.tar && cp apigeectl_1.3.3-4cbb601_linux_64/apigeectl /usr/local/bin
